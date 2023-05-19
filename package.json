@@ -15,13 +15,15 @@
     "url": "git+https://github.com/b-locatelli/SVG-Logo.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/b-locatelli/SVG-Logo/issues"
   },
   "homepage": "https://github.com/b-locatelli/SVG-Logo#readme",
   "dependencies": {
-    "inquirer": "^8.2.4",
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
     "jest": "^29.5.0"
   }
 }
