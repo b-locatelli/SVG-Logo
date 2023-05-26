@@ -7,6 +7,7 @@ const {writeFile} = require("fs/promises");
 const SVG = require('./lib/svg')
 
 
+
 function createLogo() {
     inquirer
       .prompt([
@@ -32,7 +33,7 @@ function createLogo() {
           type: "list",
           name: "shapes",
           message: "Pick one of the following shapes",
-          choices: ["Circle", "Triangle", "Sqaure"]
+          choices: ["Circle", "Triangle", "Square"]
         },
         {
           type: "input",
@@ -58,10 +59,17 @@ function createLogo() {
         const svg = new SVG();
         svg.setText(logoChars, textColor);
         svg.setShape(shape)
-        return writeFile("logo.svg", svg.render());
+        const svgMarkup = svg.render();
+        return writeFile("logo.svg", svgMarkup);
       })
+      .then(() => {
+        console.log("logo created")
+      })
+      .catch((error) => {
+        console.log("An error occured", error)
+      });
     }
 
-    createLogo()
+    createLogo();
 
     
