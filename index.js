@@ -1,3 +1,4 @@
+// my requires
 const  inquirer = require("inquirer");
 
 const {Triangle, Circle, Square} = require("./lib/shape.js")
@@ -7,7 +8,7 @@ const {writeFile} = require("fs/promises");
 const SVG = require('./lib/svg.js')
 
 
-
+// function asking questions to create logo
 function createLogo() {
     inquirer
       .prompt([
@@ -42,6 +43,7 @@ function createLogo() {
         },
 
       ])
+      // bring in shape, text, text color
       .then (({ logoChars, textColor, shapes, logoColor}) => {
         var shape;
         switch (shapes) {
@@ -55,6 +57,7 @@ function createLogo() {
             shape = new Square();
             break;
         }
+        // generates the new logo
         shape.setColor(logoColor);
         const svg = new SVG();
         svg.setText(logoChars, textColor);
