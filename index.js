@@ -72,7 +72,7 @@ function createLogo() {
         console.log("An error occured", error)
       });
     }
-
+3
     createLogo();
 
     
