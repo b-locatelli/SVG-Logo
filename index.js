@@ -1,10 +1,10 @@
 const  inquirer = require("inquirer");
 
-const {Triangle, Circle, Square} = require("./lib/shape")
+const {Triangle, Circle, Square} = require("./lib/shape.js")
 
 const {writeFile} = require("fs/promises");
 
-const SVG = require('./lib/svg')
+const SVG = require('./lib/svg.js')
 
 
 
